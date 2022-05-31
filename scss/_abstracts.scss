@@ -1,0 +1,39 @@
+/** Fonts **/
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@500&family=Open+Sans:wght@300&display=swap");
+
+/** Variables => Değişkenler **/
+$primary-font: "Changa", sans-serif;
+$secondary-font: "Open Sans", sans-serif;
+$primary-color: #e51515;
+$secondary-color: #14151a;
+$date-color: #ffb320;
+$comment-color: #08abbd;
+$gray-color: #9f9f9f;
+$light-color: #fefefe;
+
+/** UTILITIES **/
+.bg {
+  &-dark {
+    // .bg-dark
+    background-color: $secondary-color;
+  }
+
+  &-light {
+    // .bg-light
+    background-color: $light-color;
+  }
+}
+
+.ml {
+  &-2 {
+    // .ml-2
+    margin-left: 2rem;
+  }
+}
+
+/** MIXINS => Tekrar kullabilceğimiz css kodları oluşturabilmemizi sağlarlar. Tekrar eden css kodları için. **/
+@mixin flex-display($display, $align-items, $justify-content) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
