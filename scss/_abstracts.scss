@@ -10,6 +10,7 @@ $date-color: #ffb320;
 $comment-color: #08abbd;
 $gray-color: #9f9f9f;
 $light-color: #fefefe;
+$general-transition: all .5s;
 
 /** UTILITIES **/
 .bg {
@@ -29,6 +30,18 @@ $light-color: #fefefe;
     // .ml-2
     margin-left: 2rem;
   }
+}
+
+.text-light {
+  color: $light-color;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.text-center{
+  text-align: center;
 }
 
 /** MIXINS => Tekrar kullabilceğimiz css kodları oluşturabilmemizi sağlarlar. Tekrar eden css kodları için. **/

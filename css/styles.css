@@ -15,7 +15,20 @@
   margin-left: 2rem;
 }
 
+.text-light {
+  color: #fefefe;
+}
+
+.text-primary {
+  color: #e51515;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /** MIXINS => Tekrar kullabilceğimiz css kodları oluşturabilmemizi sağlarlar. Tekrar eden css kodları için. **/
+/** BUTTONS **/
 .btn {
   background-color: #fefefe;
   color: #e51515;
@@ -41,6 +54,83 @@
 .btn-primary:hover {
   background-color: #fefefe;
   color: #e51515;
+}
+
+/**BADGES **/
+.badge {
+  border: none;
+  padding: 0.2rem 2.4rem;
+  font-size: 1.6rem;
+  color: #fefefe;
+  background-color: #e51515;
+  margin: 5rem;
+  letter-spacing: 0.2rem;
+}
+
+.badge-tech {
+  background-color: #08abbd;
+}
+
+.badge-game {
+  background-color: #ffb320;
+}
+
+/** Rating **/
+.rating {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fefefe;
+  opacity: 0;
+  z-index: 99;
+  line-height: 3rem;
+  font-size: 1.4rem;
+  font-family: "Changa", sans-serif;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  color: #e51515;
+}
+
+@-webkit-keyframes mainAni {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+    border-top: 0px solid #e51515;
+  }
+  50% {
+    -webkit-transform: translateY(-5rem);
+            transform: translateY(-5rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    border-top: 2px solid #e51515;
+  }
+}
+
+@keyframes mainAni {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+    border-top: 0px solid #e51515;
+  }
+  50% {
+    -webkit-transform: translateY(-5rem);
+            transform: translateY(-5rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    border-top: 2px solid #e51515;
+  }
 }
 
 /* General Settings - Global css*/
@@ -69,12 +159,39 @@ body {
   width: 100%;
 }
 
-h2 {
+section {
+  padding: 8rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Changa", sans-serif;
+  color: #e51515;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
   font-size: 5rem;
   color: #fefefe;
-  letter-spacing: 0.5rem;
-  font-weight: 300;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4 {
+  font-size: 2rem;
+  color: #fefefe;
 }
 
 a {
@@ -107,12 +224,6 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.top-header .container .logo h1 {
-  font-size: 5rem;
-  font-family: "Changa", sans-serif;
-  color: #e51515;
 }
 
 .top-header .container .top-social-menu {
@@ -259,7 +370,7 @@ img {
 
 .owl-theme .owl-dots {
   position: absolute;
-  top: .6rem;
+  top: 0.6rem;
   right: 10%;
   z-index: 5;
   display: -webkit-box;
@@ -275,8 +386,8 @@ img {
   text-align: center;
   border-radius: 4rem;
   background-color: transparent;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .owl-theme .owl-dots .owl-dot.active, .owl-theme .owl-dots .owl-dot:hover {
@@ -291,5 +402,229 @@ img {
   font-size: 2.5rem;
   font-family: "Changa", sans-serif;
   background-color: transparent;
+}
+
+/** Latest News **/
+.latest-news {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e51515;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 8rem;
+}
+
+.latest-news-title {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.latest-news-content {
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+  background-color: #14151a;
+  height: 100%;
+}
+
+.latest-news-content .news-ticker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 8rem;
+}
+
+.latest-news-content .news-ticker p {
+  color: #fefefe;
+  font-size: 1.4rem;
+}
+
+/** RECENT GAMES **/
+.recent-games {
+  background-color: #fefefe;
+}
+
+.recent-games-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-row-gap: 4rem;
+  grid-column-gap: 4rem;
+      grid-template-areas: "item-1 item-1 item-1 item-2" "item-3 item-4 item-5 item-6";
+}
+
+.recent-games-content .recent-game-featured {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.recent-games-content .recent-game-featured .recent-game-thumbnail {
+  height: 100%;
+  width: 100%;
+}
+
+.recent-games-content .recent-game-featured .recent-game-thumbnail img {
+  height: 100%;
+  width: 100%;
+}
+
+.recent-games-content .recent-game-featured .rating {
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+}
+
+.recent-games-content .recent-game-featured .game-title {
+  font-size: 3rem !important;
+}
+
+.recent-games-content .recent-game {
+  width: 100%;
+  height: 100%;
+  background-color: #14151a;
+}
+
+.recent-games-content .recent-game-thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+
+.recent-games-content .recent-game-thumbnail img {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.recent-games-content .recent-game-thumbnail::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: rgba(229, 21, 21, 0.6);
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.recent-games-content .recent-game:hover .recent-game-thumbnail::after, .recent-games-content .recent-game:focus .recent-game-thumbnail::after {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.recent-games-content .recent-game:hover .recent-game-thumbnail img, .recent-games-content .recent-game:focus .recent-game-thumbnail img {
+  -webkit-transform: scale(1.2) rotate(5deg);
+          transform: scale(1.2) rotate(5deg);
+}
+
+.recent-games-content .recent-game:hover .recent-game-thumbnail .rating, .recent-games-content .recent-game:focus .recent-game-thumbnail .rating {
+  opacity: 1;
+}
+
+.recent-games-content .recent-game-content {
+  padding: 2rem;
+}
+
+.recent-games-content .recent-game-content .game-title {
+  margin-bottom: 1.2rem;
+  font-size: 1.7rem;
+  letter-spacing: 0;
+}
+
+.recent-games-content .recent-game-content .game-title a {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.recent-games-content .recent-game-content .game-title a:hover {
+  color: #b2b2b2;
+}
+
+.recent-games-content .recent-game-content .game-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.recent-games-content .recent-game-content .game-meta .game-date {
+  color: #ffb320;
+}
+
+.recent-games-content .recent-game-content .game-meta .game-date:hover {
+  color: #865800;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.recent-games-content .recent-game-content p {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+
+.recent-game-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: item-1;
+}
+
+.recent-game-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: item-2;
+}
+
+.recent-game-3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: item-3;
+}
+
+.recent-game-4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: item-4;
+}
+
+.recent-game-5 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: item-5;
+}
+
+.recent-game-6 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: item-6;
 }
 /*# sourceMappingURL=styles.css.map */
