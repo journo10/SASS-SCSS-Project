@@ -42,14 +42,15 @@
     background-color: $comment-color;
   }
 
-  &-game {// .badge-game
+  &-game {
+    // .badge-game
     background-color: $date-color;
   }
 }
 
 /** Rating **/
-.rating{
-  position:absolute;
+.rating {
+  position: absolute;
   top: 1.25rem;
   left: 1.25rem;
   width: 3rem;
@@ -62,6 +63,77 @@
   font-family: $primary-font;
   text-align: center;
   border-radius: 50%;
-  transition: all .5s;
+  transition: all 0.5s;
   color: $primary-color;
+}
+
+/** REVIEWS **/
+
+.review {
+  padding: 1.75rem;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-left: 10rem;
+  border-left: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  transform: skew(-28deg);
+
+  & > * {
+    transform: skew(28deg);
+  }
+
+  &-tags {
+    font-size: 1.5rem;
+    color: $light-color;
+    text-transform: uppercase;
+  }
+
+  &-text {
+    margin: 1rem 0;
+    span {
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &-user {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 8rem;
+      margin-right: 3rem;
+      border-radius: 50%;
+    }
+
+    &-detail {
+      font-family: $primary-font;
+      margin-right: 3rem;
+
+      .review-user-name {
+        color: $primary-color;
+      }
+      .review-user-date {
+        color: $date-color;
+      }
+    }
+
+    &-platform {
+      :not(:last-child) {
+        color: $primary-color;
+      }
+
+      .fab {
+        margin: 0 1rem;
+      }
+    }
+
+    &-rating {
+      margin-left: auto;
+      .checked {
+        color: $primary-color;
+      }
+    }
+  }
 }
