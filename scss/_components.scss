@@ -9,6 +9,11 @@
   letter-spacing: 2px;
   transition: all 0.5s;
 
+  @include media(medium) {
+    padding: 0.5rem 1rem;
+    //font-size: 1rem;
+  }
+
   &:hover {
     background-color: $primary-color;
     color: $light-color;
@@ -70,7 +75,7 @@
 /** Revıews **/
 
 .review {
-  padding: 1.75rem;
+  padding: 3.5rem;
   font-size: 1.3rem;
   line-height: 1.8;
   margin-left: 10rem;
@@ -78,8 +83,17 @@
   border-bottom: 1px solid $primary-color;
   transform: skew(-28deg);
 
+  @include media(large) {
+    transform: skew(0deg);
+    border: none;
+    margin-left: 0;
+  }
+
   & > * {
     transform: skew(28deg);
+    @include media(large) {
+      transform: skew(0deg);
+    }
   }
 
   &-tags {
@@ -90,16 +104,15 @@
 
   &-text {
     margin: 1rem 0;
-    span {
-      a {
-        color: $primary-color;
-      }
-    }
   }
 
   &-user {
     display: flex;
     align-items: center;
+
+    @include media(small) {
+      flex-direction: column;
+    }
 
     img {
       width: 8rem;
@@ -131,6 +144,11 @@
 
     &-rating {
       margin-left: auto;
+
+      @include media(small) {
+        margin-left: 0;
+      }
+
       .checked {
         color: $primary-color;
       }
@@ -198,4 +216,3 @@
     transform: none;
   }
 }
-
