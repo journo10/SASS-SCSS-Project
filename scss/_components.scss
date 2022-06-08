@@ -163,6 +163,18 @@
   perspective: 1000px;
   cursor: pointer;
 
+  @include media(large) {
+    height: 35rem;
+}
+
+@include media(medium) {
+    height: 30rem;
+}
+
+@include media(small) {
+    height: 25rem;
+}
+
   &-inner {
     position: relative;
     width: 100%;
